@@ -15,7 +15,11 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
+
 #pragma comment (lib, "opengl32.lib")
 #pragma comment (lib, "glew32.lib")
 #pragma comment (lib, "glfw3.lib")
 
+#include <vector>
+
+#include "DawnEngineObject.h"

@@ -11,15 +11,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DebugManager.h" />
-    <ClInclude Include="Engine.h" />
+    <ClInclude Include="DApp.h" />
+    <ClInclude Include="DawnEngineObject.h" />
+    <ClInclude Include="DDebugManager.h" />
+    <ClInclude Include="DEngine.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="DWindowManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DebugManager.cpp" />
-    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="DApp.cpp" />
+    <ClCompile Include="DawnEngineObject.cpp" />
+    <ClCompile Include="DDebugManager.cpp" />
+    <ClCompile Include="DEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="DWindowManager.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AF189DF2-C786-479B-BF32-79C446904AC6}</ProjectGuid>
