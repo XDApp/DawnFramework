@@ -1,0 +1,3 @@
+[submodule "Dependence"]
+	path = Dependence
+	url = git@github.com:XDApp/DawnFrameworkDependence.git
