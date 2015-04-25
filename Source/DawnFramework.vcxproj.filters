@@ -33,6 +33,18 @@
     <ClInclude Include="DApp.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DWindow.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DFrameworkReference.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DGraphicsManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -56,5 +68,19 @@
     <ClCompile Include="DApp.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="DWindow.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DFrameworkReference.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DGraphicsManager.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DawnFramework.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

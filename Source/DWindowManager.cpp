@@ -1,22 +1,30 @@
 #include "stdafx.h"
+#include "DWindow.h"
+#include "DDebugManager.h"
 #include "DWindowManager.h"
 
 
 DWindowManager::DWindowManager()
-	: CurrentWindow(NULL)
+	: CurrentWindow(nullptr)
 {
 }
 
 
 DWindowManager::~DWindowManager()
 {
+	delete DF;
 }
 
 
-GLFWwindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
+DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
 {
-	GLFWwindow *Window = AllocWindowObject(Width, Height, Title);
-	glfwSetInputMode(Window, GLFW_STICKY_KEYS, GL_TRUE);
+	DWindow *Window = new DWindow(AllocWindowObject(Width, Height, Title));
+	Window->DF->Engine = this->DF->Engine;
+	Window->DF->WindowManager = this->DF->WindowManager;
+	Window->DF->DebugManager = this->DF->DebugManager;
+	Window->DF->Window = Window;
+
+	this->Windows.push_back(Window);
 	return Window;
 }
 
@@ -26,17 +34,21 @@ GLFWwindow* DWindowManager::AllocWindowObject(int Width, int Height, std::string
 	GLFWwindow* Window = glfwCreateWindow(Width, Height, Title.c_str(), nullptr, nullptr);
 	if (Window == nullptr){
 		glfwTerminate();
-		//DEBUG
+		this->DF->DebugManager->Error(this, "Window Create Failed");
 		return nullptr;
 	}
-	this->Windows.push_back(Window);
+	glfwSetInputMode(Window, GLFW_STICKY_KEYS, GL_TRUE);
 	return Window;
 }
 
 
-void DWindowManager::DestroyWindowObject(GLFWwindow* Window)
+void DWindowManager::DestroyWindow(DWindow* Window)
 {
 	this->Windows.erase(std::find(Windows.begin(), Windows.end(), Window));
+}
+
+void DWindowManager::DestroyWindowObject(GLFWwindow* Window)
+{
 	glfwDestroyWindow(Window);
 }
 
@@ -47,12 +59,14 @@ void DWindowManager::Initialize()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_VISIBLE, 0);
+	glfwWindowHint(GLFW_RESIZABLE, 0);
 }
 
 
-void DWindowManager::MakeCurrent(GLFWwindow* Window)
+void DWindowManager::MakeCurrent(DWindow* Window)
 {
-	glfwMakeContextCurrent(Window);
+	glfwMakeContextCurrent(Window->GetWindow());
 	CurrentWindow = Window;
 }
 
@@ -90,11 +104,11 @@ void DWindowManager::Update()
 		{
 			this->MakeCurrent(Window);
 
-			glfwSwapBuffers(CurrentWindow);
+			glfwSwapBuffers(CurrentWindow->GetWindow());
 			glfwPollEvents();
-			if (glfwWindowShouldClose(CurrentWindow))
+			if (glfwWindowShouldClose(CurrentWindow->GetWindow()))
 			{
-				ShouldClose.push_back(CurrentWindow);
+				ShouldClose.push_back(CurrentWindow->GetWindow());
 			}
 		}
 		while (!ShouldClose.empty())
@@ -111,3 +125,4 @@ bool DWindowManager::HasWindowAvailable()
 {
 	return !Windows.empty();
 }
+

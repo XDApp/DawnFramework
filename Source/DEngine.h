@@ -1,6 +1,5 @@
 #pragma once
-
-#include "DWindowManager.h"
+#include "DawnEngineObject.h"
 
 class DEngine :
 	public DawnEngineObject
@@ -17,5 +16,6 @@ public:
 	void Loop();
 public:
 	DWindowManager* WindowManager;
+	DDebugManager* DebugManager;
 };
 

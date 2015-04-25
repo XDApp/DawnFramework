@@ -2,7 +2,8 @@
 
 #include "DApp.h"
 #include "DEngine.h"
-
+#include "DWindow.h"
+#include "DWindowManager.h"
 int main()
 {
 	DApp::Engine = new DEngine();

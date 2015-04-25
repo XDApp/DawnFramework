@@ -3,6 +3,8 @@
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
+#include "resource.h"
+
 #include <stdlib.h>
 #include <malloc.h>
 #include <memory.h>
@@ -23,3 +25,4 @@
 #include <vector>
 
 #include "DawnEngineObject.h"
+#include "DFrameworkReference.h"
