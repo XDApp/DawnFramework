@@ -45,6 +45,7 @@ GLFWwindow* DWindowManager::AllocWindowObject(int Width, int Height, std::string
 void DWindowManager::DestroyWindow(DWindow* Window)
 {
 	this->Windows.erase(std::find(Windows.begin(), Windows.end(), Window));
+	DestroyWindowObject(Window->GetWindow());
 }
 
 void DWindowManager::DestroyWindowObject(GLFWwindow* Window)
@@ -59,7 +60,7 @@ void DWindowManager::Initialize()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_VISIBLE, 0);
+	//glfwWindowHint(GLFW_VISIBLE, 0);
 	glfwWindowHint(GLFW_RESIZABLE, 0);
 }
 
@@ -97,7 +98,7 @@ void DWindowManager::PostLoop()
 
 void DWindowManager::Update()
 {
-	std::vector<GLFWwindow*> ShouldClose;
+	std::vector<DWindow*> ShouldClose;
 
 	do{
 		for (auto &Window : Windows)
@@ -108,12 +109,12 @@ void DWindowManager::Update()
 			glfwPollEvents();
 			if (glfwWindowShouldClose(CurrentWindow->GetWindow()))
 			{
-				ShouldClose.push_back(CurrentWindow->GetWindow());
+				ShouldClose.push_back(CurrentWindow);
 			}
 		}
 		while (!ShouldClose.empty())
 		{
-			DestroyWindowObject(ShouldClose.back());
+			DestroyWindow(ShouldClose.back());
 			ShouldClose.pop_back();
 		}
 	} while (this->HasWindowAvailable());
