@@ -12,16 +12,13 @@ DWindowManager::DWindowManager()
 
 DWindowManager::~DWindowManager()
 {
-	delete DF;
 }
 
 
 DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
 {
 	DWindow *Window = new DWindow(AllocWindowObject(Width, Height, Title));
-	Window->DF->Engine = this->DF->Engine;
-	Window->DF->WindowManager = this->DF->WindowManager;
-	Window->DF->DebugManager = this->DF->DebugManager;
+	Window->DF->Clone(this->DF);
 	Window->DF->Window = Window;
 
 	this->Windows.push_back(Window);

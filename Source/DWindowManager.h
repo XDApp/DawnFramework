@@ -4,10 +4,11 @@
 class DWindowManager :
 	public DawnEngineObject
 {
-	DClass(DWindowManager);
+	DClass(DWindowManager)
 public:
 	DWindowManager();
 	~DWindowManager();
+	
 private:
 	std::vector<DWindow*> Windows;
 	std::vector<DWindow*> CloseWindowQueue;

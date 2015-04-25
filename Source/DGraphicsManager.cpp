@@ -10,3 +10,13 @@ DGraphicsManager::DGraphicsManager()
 DGraphicsManager::~DGraphicsManager()
 {
 }
+
+
+void DGraphicsManager::Update()
+{
+}
+
+
+void DGraphicsManager::Render()
+{
+}

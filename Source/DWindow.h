@@ -4,12 +4,14 @@
 class DWindow :
 	public DawnEngineObject
 {
-	DClass(DWindow);
+	DClass(DWindow)
 private:
 	GLFWwindow* gWindow;
 public:
 	DWindow(GLFWwindow* Window);
 	~DWindow();
+	
+
 	GLFWwindow* GetWindow();
 	void Update();
 	void Initialize();
@@ -21,5 +23,6 @@ public:
 	void Restore();
 	void SetSize(int Width, int Height);
 	void SetPos(int X, int Y);
+	DGraphicsManager* GraphicsManager;
 };
 

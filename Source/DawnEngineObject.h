@@ -4,9 +4,10 @@ class DFrameworkReference;
 
 class DawnEngineObject
 {
-	DClass(DawnEngineObject);
+	DClass(DawnEngineObject)
 public:
 	DawnEngineObject();
 	~DawnEngineObject();
+	
 	DFrameworkReference* DF;
 };

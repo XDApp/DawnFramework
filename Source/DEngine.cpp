@@ -12,13 +12,8 @@ DEngine::DEngine()
 	this->DF->DebugManager = this->DebugManager;
 	this->DF->WindowManager = this->WindowManager;
 
-	WindowManager->DF->Engine = this->DF->Engine;
-	WindowManager->DF->DebugManager = this->DF->DebugManager;
-	WindowManager->DF->WindowManager = this->DF->WindowManager;
-
-	DebugManager->DF->Engine = this->DF->Engine;
-	DebugManager->DF->DebugManager = this->DF->DebugManager;
-	DebugManager->DF->WindowManager = this->DF->WindowManager;
+	WindowManager->DF->Clone(this->DF);
+	DebugManager->DF->Clone(this->DF);
 
 }
 

@@ -3,9 +3,12 @@
 class DGraphicsManager :
 	public DawnEngineObject
 {
-	DClass(DGraphicsManager);
+	DClass(DGraphicsManager)
 public:
 	DGraphicsManager();
 	~DGraphicsManager();
+	
+	void Update();
+	void Render();
 };
 

@@ -1,15 +1,20 @@
 #include "stdafx.h"
 #include "DWindow.h"
+#include "DGraphicsManager.h"
 #include "DWindowManager.h"
 
 DWindow::DWindow(GLFWwindow* Window)
 	:gWindow(Window)
+	, GraphicsManager(new DGraphicsManager)
 {
+	this->DF->GraphicsManager = this->GraphicsManager;
+	this->GraphicsManager->DF->Clone(this->DF);
 }
 
 
 DWindow::~DWindow()
 {
+	delete this->GraphicsManager;
 }
 
 
@@ -21,6 +26,7 @@ GLFWwindow* DWindow::GetWindow()
 
 void DWindow::Update()
 {
+	DF->GraphicsManager->Update();
 	if (glfwWindowShouldClose(this->GetWindow()))
 	{
 		this->Close();
@@ -37,6 +43,7 @@ void DWindow::Initialize()
 
 void DWindow::Render()
 {
+	DF->GraphicsManager->Render();
 }
 
 

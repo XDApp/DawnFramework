@@ -4,10 +4,12 @@
 class DEngine :
 	public DawnEngineObject
 {
-	DClass(DEngine);
+	DClass(DEngine)
+
 public:
 	DEngine();
 	~DEngine();
+	
 public:
 	void Initialize();
 private:
