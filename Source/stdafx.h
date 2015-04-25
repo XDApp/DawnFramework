@@ -24,5 +24,6 @@
 
 #include <vector>
 
+#include "DCore.h"
 #include "DawnEngineObject.h"
 #include "DFrameworkReference.h"

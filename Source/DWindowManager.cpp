@@ -82,14 +82,13 @@ void DWindowManager::Render()
 	}
 }
 
-bool DWindowManager::Update()
+void DWindowManager::Update()
 {
 	for (auto &Window : Windows)
 	{
 		Window->Update();
 	}
 	this->ProcessCloseSignal();
-	return this->HasWindowAvailable();
 }
 
 

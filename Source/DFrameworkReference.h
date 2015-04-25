@@ -8,6 +8,7 @@ class DWindow;
 
 class DFrameworkReference
 {
+	DClass(DFrameworkReference);
 public:
 	DFrameworkReference();
 	~DFrameworkReference();

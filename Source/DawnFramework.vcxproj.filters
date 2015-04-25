@@ -45,6 +45,9 @@
     <ClInclude Include="DGraphicsManager.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="DCore.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

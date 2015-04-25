@@ -3,6 +3,7 @@
 class DGraphicsManager :
 	public DawnEngineObject
 {
+	DClass(DGraphicsManager);
 public:
 	DGraphicsManager();
 	~DGraphicsManager();

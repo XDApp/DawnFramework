@@ -4,6 +4,7 @@
 class DWindowManager :
 	public DawnEngineObject
 {
+	DClass(DWindowManager);
 public:
 	DWindowManager();
 	~DWindowManager();
@@ -18,7 +19,7 @@ private:
 public:
 	void Initialize();
 	void MakeCurrent(DWindow* Window);
-	bool Update();
+	void Update();
 	void Render();
 private:
 	DWindow* CurrentWindow;

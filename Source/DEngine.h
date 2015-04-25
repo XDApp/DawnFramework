@@ -4,6 +4,7 @@
 class DEngine :
 	public DawnEngineObject
 {
+	DClass(DEngine);
 public:
 	DEngine();
 	~DEngine();

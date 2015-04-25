@@ -4,6 +4,7 @@ class DFrameworkReference;
 
 class DawnEngineObject
 {
+	DClass(DawnEngineObject);
 public:
 	DawnEngineObject();
 	~DawnEngineObject();

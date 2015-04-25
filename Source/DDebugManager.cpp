@@ -21,11 +21,16 @@ void DDebugManager::DebugPrint(std::string DebugString)
 
 void DDebugManager::Error(DawnEngineObject* Sender, std::string Detail)
 {
-	this->DebugPrint(Detail);
+	this->ClassPrint(Sender, "Error: " + Detail);
 }
 
 
 void DDebugManager::Message(DawnEngineObject* Sender, std::string Detail)
 {
-	this->DebugPrint(Detail);
+	this->ClassPrint(Sender, "Message: " + Detail);
+}
+
+void DDebugManager::ClassPrint(DawnEngineObject* Sender, std::string Detail)
+{
+	this->DebugPrint("[" + Sender->ClassName() + "] " + Detail);
 }

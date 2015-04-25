@@ -4,6 +4,7 @@
 class DWindow :
 	public DawnEngineObject
 {
+	DClass(DWindow);
 private:
 	GLFWwindow* gWindow;
 public:

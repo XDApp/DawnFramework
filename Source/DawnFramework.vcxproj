@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="DApp.h" />
     <ClInclude Include="DawnEngineObject.h" />
+    <ClInclude Include="DCore.h" />
     <ClInclude Include="DDebugManager.h" />
     <ClInclude Include="DEngine.h" />
     <ClInclude Include="DFrameworkReference.h" />
