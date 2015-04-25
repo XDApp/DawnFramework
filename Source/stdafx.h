@@ -12,17 +12,17 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-
-#pragma comment (lib, "opengl32.lib")
 #pragma comment (lib, "glew32.lib")
-#pragma comment (lib, "glfw3.lib")
+#pragma comment (lib, "opengl32.lib")
+#pragma comment (lib, "glfw3dll.lib")
 
-#include <vector>
+
 
 #include "DCore.h"
 #include "DawnEngineObject.h"

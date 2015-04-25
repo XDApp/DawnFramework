@@ -14,7 +14,6 @@ DEngine::DEngine()
 
 	WindowManager->DF->Clone(this->DF);
 	DebugManager->DF->Clone(this->DF);
-
 }
 
 
@@ -29,9 +28,7 @@ void DEngine::Initialize()
 {
 	this->InitializeGLFW();
 	this->WindowManager->Initialize();
-
-	this->InitializeGLEW(); 
-
+	
 	DF->DebugManager->Message(this, "Engine is Initialized Successfully");
 }
 
@@ -51,7 +48,8 @@ void DEngine::InitializeGLFW()
 
 void DEngine::InitializeGLEW()
 {
-	if (glewInit() != GLEW_OK) {
+	if (glewInit() != GLEW_OK) 
+	{
 		DF->DebugManager->Error(this, "GLEW Failed to Initialize.");
 	}
 	else
@@ -69,4 +67,10 @@ void DEngine::Loop()
 		DF->WindowManager->Render();
 	} while (DF->WindowManager->HasWindowAvailable());
 	glfwTerminate();
+}
+
+
+void DEngine::InitializeContext()
+{
+	this->InitializeGLEW();
 }

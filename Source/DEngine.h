@@ -20,5 +20,6 @@ public:
 public:
 	DWindowManager* WindowManager;
 	DDebugManager* DebugManager;
+	void InitializeContext();
 };
 

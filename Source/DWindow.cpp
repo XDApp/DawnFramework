@@ -36,13 +36,12 @@ void DWindow::Update()
 
 void DWindow::Initialize()
 {
-	DF->WindowManager->MakeCurrent(this);
-	glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
 }
 
 
 void DWindow::Render()
 {
+	glClearColor(255.0f, 255.0f, 0.0f, 255.0f);
 	DF->GraphicsManager->Render();
 }
 
