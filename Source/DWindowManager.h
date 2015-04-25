@@ -9,6 +9,7 @@ public:
 	~DWindowManager();
 private:
 	std::vector<DWindow*> Windows;
+	std::vector<DWindow*> CloseWindowQueue;
 public:
 	DWindow* NewWindow(int Width, int Height, std::string Title);
 private:
@@ -17,16 +18,16 @@ private:
 public:
 	void Initialize();
 	void MakeCurrent(DWindow* Window);
-	void Loop();
+	bool Update();
+	void Render();
 private:
 	DWindow* CurrentWindow;
-private:
-	void PreLoop();
-	void PostLoop();
-	void Update();
 public:
 	bool HasWindowAvailable();
 	void DestroyWindow(DWindow* Window);
 	
+	void CloseWindow(DWindow* Window);
+private:
+	void ProcessCloseSignal();
 };
 

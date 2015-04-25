@@ -10,5 +10,9 @@ public:
 	DWindow(GLFWwindow* Window);
 	~DWindow();
 	GLFWwindow* GetWindow();
+	void Update();
+	void Initialize();
+	void Render();
+	void Close();
 };
 

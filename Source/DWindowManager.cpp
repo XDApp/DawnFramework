@@ -71,54 +71,25 @@ void DWindowManager::MakeCurrent(DWindow* Window)
 	CurrentWindow = Window;
 }
 
-
-void DWindowManager::Loop()
-{
-	PreLoop();
-	Update();
-	PostLoop();
-}
-
-
-void DWindowManager::PreLoop()
+void DWindowManager::Render()
 {
 	for (auto &Window : Windows)
 	{
 		this->MakeCurrent(Window);
-		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+		Window->Render();
+		glfwSwapBuffers(CurrentWindow->GetWindow());
+		glfwPollEvents();
 	}
 }
 
-
-void DWindowManager::PostLoop()
+bool DWindowManager::Update()
 {
-	glfwTerminate();
-}
-
-
-void DWindowManager::Update()
-{
-	std::vector<DWindow*> ShouldClose;
-
-	do{
-		for (auto &Window : Windows)
-		{
-			this->MakeCurrent(Window);
-
-			glfwSwapBuffers(CurrentWindow->GetWindow());
-			glfwPollEvents();
-			if (glfwWindowShouldClose(CurrentWindow->GetWindow()))
-			{
-				ShouldClose.push_back(CurrentWindow);
-			}
-		}
-		while (!ShouldClose.empty())
-		{
-			DestroyWindow(ShouldClose.back());
-			ShouldClose.pop_back();
-		}
-	} while (this->HasWindowAvailable());
-
+	for (auto &Window : Windows)
+	{
+		Window->Update();
+	}
+	this->ProcessCloseSignal();
+	return this->HasWindowAvailable();
 }
 
 
@@ -127,3 +98,17 @@ bool DWindowManager::HasWindowAvailable()
 	return !Windows.empty();
 }
 
+void DWindowManager::CloseWindow(DWindow* Window)
+{
+	this->CloseWindowQueue.push_back(Window);
+}
+
+
+void DWindowManager::ProcessCloseSignal()
+{
+	while (!this->CloseWindowQueue.empty())
+	{
+		this->DestroyWindow(this->CloseWindowQueue.back());
+		this->CloseWindowQueue.pop_back();
+	}
+}

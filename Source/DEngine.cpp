@@ -60,5 +60,9 @@ void DEngine::InitializeGLEW()
 
 void DEngine::Loop()
 {
-	this->WindowManager->Loop();
+	while (DF->WindowManager->Update())
+	{
+		DF->WindowManager->Render();
+	}
+	glfwTerminate();
 }
