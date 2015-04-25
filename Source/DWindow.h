@@ -14,5 +14,11 @@ public:
 	void Initialize();
 	void Render();
 	void Close();
+	void Show();
+	void Hide();
+	void Minimize();
+	void Restore();
+	void SetSize(int Width, int Height);
+	void SetPos(int X, int Y);
 };
 

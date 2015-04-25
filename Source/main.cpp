@@ -8,9 +8,10 @@ int main()
 {
 	DApp::Engine = new DEngine();
 	DApp::Engine->Initialize();
-	DApp::Engine->WindowManager->NewWindow(640, 480, "Dawn Framework");
-	DApp::Engine->WindowManager->NewWindow(640, 480, "Dawn Framework 2");
-	DApp::Engine->WindowManager->MakeCurrent(DApp::Engine->WindowManager->NewWindow(640, 480, "Dawn Framework 3"));
+	DWindow *Window = DApp::Engine->WindowManager->NewWindow(800, 600, "Dawn Framework Sample Window");
+	DApp::Engine->WindowManager->MakeCurrent(Window);
+	Window->Initialize();
+	Window->Show();
 	DApp::Engine->Loop();
 	return 0;
 }
