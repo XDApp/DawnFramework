@@ -1,9 +1,7 @@
 #include "stdafx.h"
 
-#include "DApp.h"
-#include "DEngine.h"
-#include "DWindow.h"
-#include "DWindowManager.h"
+#include "DFramework.h"
+
 int main()
 {
 	DApp::Engine = new DEngine();

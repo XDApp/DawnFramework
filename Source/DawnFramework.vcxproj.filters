@@ -48,6 +48,9 @@
     <ClInclude Include="DCore.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="DFramework.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

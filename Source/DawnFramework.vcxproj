@@ -16,6 +16,7 @@
     <ClInclude Include="DCore.h" />
     <ClInclude Include="DDebugManager.h" />
     <ClInclude Include="DEngine.h" />
+    <ClInclude Include="DFramework.h" />
     <ClInclude Include="DFrameworkReference.h" />
     <ClInclude Include="DGraphicsManager.h" />
     <ClInclude Include="DWindow.h" />
