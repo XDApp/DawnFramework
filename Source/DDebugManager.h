@@ -10,10 +10,10 @@ public:
 	~DDebugManager();
 	
 
-	void DebugPrint(std::string DebugString);
-	void Error(DawnEngineObject* Sender, std::string Detail);
-	void Message(DawnEngineObject* Sender, std::string Detail);
+	void DebugPrint(const std::string& DebugString);
+	void Error(const DawnEngineObject* Sender, const std::string& Detail);
+	void Message(const DawnEngineObject* Sender, const std::string& Detail);
 
-	void ClassPrint(DawnEngineObject* Sender, std::string Detail);
+	void ClassPrint(const DawnEngineObject* Sender, const std::string& Detail);
 };
 
