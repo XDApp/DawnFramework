@@ -14,7 +14,7 @@ DWindow::DWindow(GLFWwindow* Window)
 
 DWindow::~DWindow()
 {
-	delete this->GraphicsManager;
+	DDel(this->GraphicsManager);
 }
 
 

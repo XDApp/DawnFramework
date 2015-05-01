@@ -19,6 +19,7 @@
     <ClInclude Include="DFramework.h" />
     <ClInclude Include="DFrameworkReference.h" />
     <ClInclude Include="DGraphicsManager.h" />
+    <ClInclude Include="DResourceManager.h" />
     <ClInclude Include="DWindow.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -31,6 +32,7 @@
     <ClCompile Include="DEngine.cpp" />
     <ClCompile Include="DFrameworkReference.cpp" />
     <ClCompile Include="DGraphicsManager.cpp" />
+    <ClCompile Include="DResourceManager.cpp" />
     <ClCompile Include="DWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp" />

@@ -20,6 +20,7 @@ public:
 public:
 	DWindowManager* WindowManager;
 	DDebugManager* DebugManager;
+	DResourceManager* ResourceManager;
 	void InitializeContext();
 };
 

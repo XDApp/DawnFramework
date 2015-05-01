@@ -1,26 +1,31 @@
 #include "stdafx.h"
 
+#include "DResourceManager.h"
 #include "DWindowManager.h"
 #include "DDebugManager.h"
 #include "DEngine.h"
 
 DEngine::DEngine()
 	: WindowManager(new DWindowManager),
-	DebugManager(new DDebugManager)
+	DebugManager(new DDebugManager),
+	ResourceManager(new DResourceManager)
 {
 	this->DF->Engine = this;
 	this->DF->DebugManager = this->DebugManager;
 	this->DF->WindowManager = this->WindowManager;
+	this->DF->ResourceManager = this->ResourceManager;
 
 	WindowManager->DF->Clone(this->DF);
 	DebugManager->DF->Clone(this->DF);
+	ResourceManager->DF->Clone(this->DF);
 }
 
 
 DEngine::~DEngine()
 {
-	delete this->WindowManager;
-	delete this->DebugManager;
+	DDel(this->WindowManager);
+	DDel(this->DebugManager);
+	DDel(this->ResourceManager);
 }
 
 

@@ -51,6 +51,9 @@
     <ClInclude Include="DFramework.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="DResourceManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -81,6 +84,9 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="DGraphicsManager.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DResourceManager.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

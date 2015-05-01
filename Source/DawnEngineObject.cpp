@@ -9,5 +9,5 @@ DawnEngineObject::DawnEngineObject()
 
 DawnEngineObject::~DawnEngineObject()
 {
-	delete this->DF;
+	DDel(this->DF);
 }

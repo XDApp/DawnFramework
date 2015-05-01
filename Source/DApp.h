@@ -7,4 +7,5 @@ public:
 	static DEngine *Engine;
 	DApp();
 	virtual ~DApp();
+	static void Run();
 };

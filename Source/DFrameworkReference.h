@@ -6,6 +6,7 @@ class DWindowManager;
 class DDebugManager;
 class DWindow;
 class DGraphicsManager;
+class DResourceManager;
 
 #define DFrameworkObjectCopy(ClassName)\
 	this->ClassName = (this->ClassName == nullptr) ? (DFReference->ClassName) : (this->ClassName)
@@ -22,6 +23,7 @@ public:
 	DDebugManager* DebugManager;
 	DWindow* Window;
 	DGraphicsManager* GraphicsManager;
+	DResourceManager* ResourceManager;
 
 	void Clone(DFrameworkReference* DFReference);
 };

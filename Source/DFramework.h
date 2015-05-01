@@ -8,5 +8,6 @@
 #include "DGraphicsManager.h"
 #include "DWindow.h"
 #include "DWindowManager.h"
+#include "DResourceManager.h"
 
 #include "DApp.h"
