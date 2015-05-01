@@ -8,4 +8,5 @@ public:
 	DApp();
 	virtual ~DApp();
 	static void Run(DAppConfig* Config);
+	static DFrameworkReference* DF;
 };

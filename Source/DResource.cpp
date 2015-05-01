@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "DResource.h"
+#include "DResourceLoader.h"
 
-
-DResource::DResource()
+DResource::DResource(DResourceLoader* loader)
+	:Loader(loader)
 {
 }
 

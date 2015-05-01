@@ -10,5 +10,9 @@
 #include "DWindowManager.h"
 #include "DResourceManager.h"
 
+#include "DResource.h"
+#include "DResourceLoader.h"
+#include "DTextFileResourceLoader.h"
+
 #include "DApp.h"
 #include "DAppConfig.h"

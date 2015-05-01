@@ -5,7 +5,7 @@ class DGLProgram :
 {
 	DClass(DGLProgram)
 public:
-	DGLProgram();
+	DGLProgram(DResourceLoader* loader);
 	~DGLProgram();
 };
 

@@ -29,5 +29,5 @@ const std::string DAppConfig::ResourcePath()
 
 const DColor DAppConfig::BackgroundColor()
 {
-	return DColorC(0, 0, 0, 0);
+	return DColorC(0, 0, 100, 0);
 }

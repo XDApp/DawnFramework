@@ -20,11 +20,13 @@
     <ClInclude Include="DFramework.h" />
     <ClInclude Include="DFrameworkReference.h" />
     <ClInclude Include="DGLProgram.h" />
+    <ClInclude Include="DGLShader.h" />
     <ClInclude Include="DGraphicsManager.h" />
     <ClInclude Include="DResource.h" />
+    <ClInclude Include="DResourceLoader.h" />
     <ClInclude Include="DResourceManager.h" />
+    <ClInclude Include="DTextFileResourceLoader.h" />
     <ClInclude Include="DWindow.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="DWindowManager.h" />
   </ItemGroup>
@@ -36,9 +38,12 @@
     <ClCompile Include="DEngine.cpp" />
     <ClCompile Include="DFrameworkReference.cpp" />
     <ClCompile Include="DGLProgram.cpp" />
+    <ClCompile Include="DGLShader.cpp" />
     <ClCompile Include="DGraphicsManager.cpp" />
     <ClCompile Include="DResource.cpp" />
+    <ClCompile Include="DResourceLoader.cpp" />
     <ClCompile Include="DResourceManager.cpp" />
+    <ClCompile Include="DTextFileResourceLoader.cpp" />
     <ClCompile Include="DWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp" />
