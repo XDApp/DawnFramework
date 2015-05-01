@@ -26,7 +26,6 @@ DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
 	glewExperimental = GL_TRUE;
 	Window->Context = new GLEWContext();
 
-	DWindow* tmp = this->GetCurrentWindow();
 	this->MakeCurrent(Window);
 
 	if (Window->Context == nullptr)
@@ -47,8 +46,6 @@ DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
 	Window->Initialize();
 
 	this->Windows.push_back(Window);
-
-	this->MakeCurrent(tmp);
 	return Window;
 }
 
