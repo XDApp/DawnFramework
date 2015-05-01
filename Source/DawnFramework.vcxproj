@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DApp.h" />
+    <ClInclude Include="DAppConfig.h" />
     <ClInclude Include="DawnEngineObject.h" />
     <ClInclude Include="DCore.h" />
     <ClInclude Include="DDebugManager.h" />
@@ -19,6 +20,7 @@
     <ClInclude Include="DFramework.h" />
     <ClInclude Include="DFrameworkReference.h" />
     <ClInclude Include="DGraphicsManager.h" />
+    <ClInclude Include="DResource.h" />
     <ClInclude Include="DResourceManager.h" />
     <ClInclude Include="DWindow.h" />
     <ClInclude Include="resource.h" />
@@ -27,11 +29,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DApp.cpp" />
+    <ClCompile Include="DAppConfig.cpp" />
     <ClCompile Include="DawnEngineObject.cpp" />
     <ClCompile Include="DDebugManager.cpp" />
     <ClCompile Include="DEngine.cpp" />
     <ClCompile Include="DFrameworkReference.cpp" />
     <ClCompile Include="DGraphicsManager.cpp" />
+    <ClCompile Include="DResource.cpp" />
     <ClCompile Include="DResourceManager.cpp" />
     <ClCompile Include="DWindow.cpp" />
     <ClCompile Include="main.cpp" />

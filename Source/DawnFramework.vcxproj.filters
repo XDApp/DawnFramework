@@ -54,6 +54,12 @@
     <ClInclude Include="DResourceManager.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="DAppConfig.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DResource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -87,6 +93,12 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="DResourceManager.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DAppConfig.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DResource.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
