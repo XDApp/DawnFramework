@@ -25,5 +25,9 @@ public:
 	DGraphicsManager* GraphicsManager;
 	virtual void PullReference(const DawnEngineObject* Object);
 	void Initialize();
+public:
+	GLEWContext* Context;
+
+	GLEWContext* GetContext();
 };
 

@@ -33,5 +33,8 @@ private:
 	void ProcessCloseSignal();
 public:
 	virtual void PullReference(const DawnEngineObject* Object);
+	DWindow* GetCurrentWindow();
+private:
+	DWindow* __GetAllocedWindow();
 };
 

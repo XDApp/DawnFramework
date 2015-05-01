@@ -51,21 +51,6 @@ void DEngine::InitializeGLFW()
 	}
 }
 
-
-void DEngine::InitializeGLEW()
-{
-	glewExperimental = true;
-	if (glewInit() != GLEW_OK) 
-	{
-		DF->DebugManager->Error(this, "GLEW Failed to Initialize.");
-	}
-	else
-	{
-		DF->DebugManager->Message(this, "GLEW is Initialized Successfully.");
-	}
-}
-
-
 void DEngine::Loop()
 {
 	do
@@ -74,10 +59,4 @@ void DEngine::Loop()
 		DF->WindowManager->Render();
 	} while (DF->WindowManager->HasWindowAvailable());
 	glfwTerminate();
-}
-
-
-void DEngine::InitializeContext()
-{
-	this->InitializeGLEW();
 }

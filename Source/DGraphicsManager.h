@@ -1,11 +1,7 @@
 #pragma once
 #include "DawnEngineObject.h"
 
-class DGLVertexShader;
-class DGLFragmentShader;
-class DResourceLoader;
-class DGLProgram;
-class DGLShader;
+class DSceneManager;
 
 class DGraphicsManager :
 	public DawnEngineObject
@@ -18,11 +14,8 @@ public:
 	void Update();
 	void Render();
 
-	DGLVertexShader *VShader;
-	DGLFragmentShader *FShader;
-	DResourceLoader *VLoader;
-	DResourceLoader *FLoader;
-	DGLProgram *Program;
-
-	void Debug_RunShader();
+	DSceneManager *SceneManager;
+	void PullReference(const DawnEngineObject* Object);
+	void ProcessEnd();
+	bool CanEnd();
 };

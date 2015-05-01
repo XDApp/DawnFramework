@@ -14,14 +14,19 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include <queue>
+
+#define GLEW_MX
+#define GLEW_STATIC
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-#pragma comment (lib, "glew32.lib")
 #pragma comment (lib, "opengl32.lib")
 #pragma comment (lib, "glfw3dll.lib")
+#pragma comment (lib, "glu32.lib")
+#pragma comment (lib, "glew32mxs.lib")
 
 
 

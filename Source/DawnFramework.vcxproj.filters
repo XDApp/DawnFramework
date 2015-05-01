@@ -71,6 +71,18 @@
     <ClInclude Include="DGLFragmentShader.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="DSceneManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DScene.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DScene_Main.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DScene_Main2.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -128,6 +140,18 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="DGLFragmentShader.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DSceneManager.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DScene.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DScene_Main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DScene_Main2.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

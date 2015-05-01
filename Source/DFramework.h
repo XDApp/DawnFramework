@@ -9,6 +9,8 @@
 #include "DWindow.h"
 #include "DWindowManager.h"
 #include "DResourceManager.h"
+#include "DScene.h"
+#include "DSceneManager.h"
 
 #include "DResource.h"
 #include "DResourceLoader.h"

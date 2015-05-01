@@ -2,7 +2,8 @@
 #include "DWindow.h"
 #include "DDebugManager.h"
 #include "DWindowManager.h"
-
+#include "DApp.h"
+#include "DEngine.h"
 
 DWindowManager::DWindowManager()
 	: CurrentWindow(nullptr)
@@ -18,20 +19,45 @@ DWindowManager::~DWindowManager()
 DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
 {
 	DWindow *Window = new DWindow(AllocWindowObject(Width, Height, Title));
-	Window->PullReference(this);
 	Window->DF->Window = Window;
+	Window->PullReference(this);
 
+	
+	glewExperimental = GL_TRUE;
+	Window->Context = new GLEWContext();
+
+	DWindow* tmp = this->GetCurrentWindow();
 	this->MakeCurrent(Window);
+
+	if (Window->Context == nullptr)
+	{
+		DF->DebugManager->Error(this, "Failed to Create GLEW Context");
+		return nullptr;
+	}
+	
+	if (glewInit() != GLEW_OK)
+	{
+		DF->DebugManager->Error(this, "Failed to Initialize GLEW");
+		return nullptr;
+	}
+	else
+	{
+		DF->DebugManager->Message(this, "GLEW is Initialized Successfully");
+	}
 	Window->Initialize();
 
 	this->Windows.push_back(Window);
+
+	this->MakeCurrent(tmp);
 	return Window;
 }
 
 
 GLFWwindow* DWindowManager::AllocWindowObject(int Width, int Height, std::string Title)
 {
-	GLFWwindow* Window = glfwCreateWindow(Width, Height, Title.c_str(), nullptr, nullptr);
+	DWindow *__Window = this->__GetAllocedWindow();
+	GLFWwindow *___Window = __Window == nullptr ? nullptr : __Window->GetWindow();
+	GLFWwindow* Window = glfwCreateWindow(Width, Height, Title.c_str(), nullptr, ___Window);
 	if (Window == nullptr){
 		glfwTerminate();
 		this->DF->DebugManager->Error(this, "Window Create Failed");
@@ -44,6 +70,7 @@ GLFWwindow* DWindowManager::AllocWindowObject(int Width, int Height, std::string
 
 void DWindowManager::DestroyWindow(DWindow* Window)
 {
+	delete Window->Context;
 	this->Windows.erase(std::find(Windows.begin(), Windows.end(), Window));
 	DestroyWindowObject(Window->GetWindow());
 }
@@ -67,30 +94,33 @@ void DWindowManager::Initialize()
 
 void DWindowManager::MakeCurrent(DWindow* Window)
 {
-	if (CurrentWindow != Window)
+	if (Window != this->CurrentWindow)
 	{
-		glfwMakeContextCurrent(Window->GetWindow());
+		if(Window!=nullptr)glfwMakeContextCurrent(Window->GetWindow());
+		else glfwMakeContextCurrent(nullptr);
 		CurrentWindow = Window;
 	}
 }
 
 void DWindowManager::Render()
 {
-	for (auto &Window : Windows)
+	for (auto Window : Windows)
 	{
 		this->MakeCurrent(Window);
 		Window->Render();
-		glfwPollEvents();
 	}
 }
 
 void DWindowManager::Update()
 {
-	for (auto &Window : Windows)
+	this->ProcessCloseSignal();
+	glfwPollEvents();
+	
+	for (auto Window : Windows)
 	{
+		this->MakeCurrent(Window);
 		Window->Update();
 	}
-	this->ProcessCloseSignal();
 }
 
 
@@ -122,4 +152,21 @@ void DWindowManager::PullReference(const DawnEngineObject* Object)
 	{
 		Window->PullReference(this);
 	}
+}
+
+
+GLEWContext* glewGetContext()
+{
+	return DApp::Engine->WindowManager->GetCurrentWindow()->GetContext();
+}
+
+DWindow* DWindowManager::GetCurrentWindow()
+{
+	return this->CurrentWindow;
+}
+
+DWindow* DWindowManager::__GetAllocedWindow()
+{
+	if (this->Windows.empty())return nullptr;
+	else return this->Windows[0];
 }

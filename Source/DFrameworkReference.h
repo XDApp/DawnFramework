@@ -8,6 +8,8 @@ class DWindow;
 class DGraphicsManager;
 class DResourceManager;
 class DAppConfig;
+class DSceneManager;
+class DScene;
 
 #define DFrameworkObjectCopy(ClassName)\
 	this->ClassName = (this->ClassName == nullptr) ? (DFReference->ClassName) : (this->ClassName)
@@ -25,6 +27,9 @@ public:
 	DWindow* Window;
 	DGraphicsManager* GraphicsManager;
 	DResourceManager* ResourceManager;
+	DSceneManager* SceneManager;
+
+	DScene* Scene;
 
 	DAppConfig* Config;
 

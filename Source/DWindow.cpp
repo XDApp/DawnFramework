@@ -4,10 +4,12 @@
 #include "DWindowManager.h"
 #include "DDebugManager.h"
 #include "DAppConfig.h"
+#include "DSceneManager.h"
 
 DWindow::DWindow(GLFWwindow* Window)
 	:gWindow(Window)
 	, GraphicsManager(new DGraphicsManager)
+	, Context(nullptr)
 {
 	this->DF->GraphicsManager = this->GraphicsManager;
 }
@@ -30,7 +32,14 @@ void DWindow::Update()
 	DF->GraphicsManager->Update();
 	if (glfwWindowShouldClose(this->GetWindow()))
 	{
-		this->Close();
+		if (this->GraphicsManager->CanEnd())
+		{
+			this->Close();
+		}
+		else
+		{
+			this->GraphicsManager->ProcessEnd();
+		}
 	}
 }
 
@@ -39,6 +48,7 @@ void DWindow::Render()
 {
 	DF->GraphicsManager->Render();
 	glfwSwapBuffers(this->gWindow);
+	
 }
 
 
@@ -95,4 +105,10 @@ void DWindow::Initialize()
 {
 	DColor tmp = DF->Config->BackgroundColor();
 	glClearColor(DGCR(tmp),DGCG(tmp),DGCB(tmp),DGCA(tmp));
+}
+
+
+GLEWContext* DWindow::GetContext()
+{
+	return this->Context;
 }

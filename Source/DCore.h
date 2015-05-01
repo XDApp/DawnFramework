@@ -6,7 +6,7 @@
 	static const std::string _StaticClassName(){ return (#className); }
 
 #define DDel(objectName)\
-	if(objectName != nullptr) delete objectName
+	if(objectName) delete objectName
 
 //Dawn Framework Color
 using DColor = unsigned long;
@@ -26,3 +26,5 @@ using DColor = unsigned long;
 #define DGCG(color) DColorFloat(DColorG(color))
 #define DGCB(color) DColorFloat(DColorB(color))
 #define DGCA(color) DColorFloat(DColorA(color))
+
+GLEWContext* glewGetContext();
