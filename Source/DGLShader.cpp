@@ -19,6 +19,7 @@ DGLShader::~DGLShader()
 
 void DGLShader::Load()
 {
+	DResource::Load();
 	std::string ShaderString="";
 	std::string Buffer;
 	std::istream &in = Loader->Stream();
@@ -50,6 +51,7 @@ void DGLShader::Load()
 void DGLShader::Destroy()
 {
 	glDeleteShader(this->ShaderID);
+	DResource::Destroy();
 }
 
 

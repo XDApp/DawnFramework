@@ -4,6 +4,8 @@
 class DGLVertexShader;
 class DGLFragmentShader;
 class DResourceLoader;
+class DGLProgram;
+class DGLShader;
 
 class DGraphicsManager :
 	public DawnEngineObject
@@ -20,5 +22,7 @@ public:
 	DGLFragmentShader *FShader;
 	DResourceLoader *VLoader;
 	DResourceLoader *FLoader;
+	DGLProgram *Program;
+
 	void Debug_RunShader();
 };

@@ -19,6 +19,5 @@
 #include "DGLFragmentShader.h"
 #include "DGLProgram.h"
 
-
 #include "DApp.h"
 #include "DAppConfig.h"

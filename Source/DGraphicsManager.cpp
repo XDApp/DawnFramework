@@ -5,6 +5,7 @@
 #include "DGLVertexShader.h"
 #include "DResourceLoader.h"
 #include "DGLFragmentShader.h"
+#include "DGLProgram.h"
 
 DGraphicsManager::DGraphicsManager()
 {
@@ -23,14 +24,14 @@ void DGraphicsManager::Update()
 
 void DGraphicsManager::Render()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 
 void DGraphicsManager::Debug_RunShader()
 {
-	VLoader = new DTextFileResourceLoader(DF->Config->ResourcePath() + "V.vertexshader");
-	FLoader = new DTextFileResourceLoader(DF->Config->ResourcePath() + "F.fragmentshader");
+	VLoader = new DTextFileResourceLoader(DF->Config->ResourcePath() + "V.vert.glsl");
+	FLoader = new DTextFileResourceLoader(DF->Config->ResourcePath() + "F.frag.glsl");
 	
 	VShader = new DGLVertexShader(VLoader);
 	FShader = new DGLFragmentShader(FLoader);
@@ -43,5 +44,11 @@ void DGraphicsManager::Debug_RunShader()
 	FShader->Load();
 	FLoader->Close();
 
-	DF->DebugManager->Message(this, "FShaderID: " + std::to_string(FShader->GetShader()));
+	Program = new DGLProgram();
+
+	Program->AttachShader(VShader);
+	Program->AttachShader(FShader);
+	Program->Load();
+
+	DF->DebugManager->Message(this, "ProgramID: " + std::to_string(Program->GetProgram()));
 }
