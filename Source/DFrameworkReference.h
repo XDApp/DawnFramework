@@ -25,6 +25,6 @@ public:
 	DGraphicsManager* GraphicsManager;
 	DResourceManager* ResourceManager;
 
-	void Clone(DFrameworkReference* DFReference);
+	void Clone(const DFrameworkReference* DFReference);
 };
 

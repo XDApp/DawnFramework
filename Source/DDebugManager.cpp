@@ -12,25 +12,25 @@ DDebugManager::~DDebugManager()
 }
 
 
-void DDebugManager::DebugPrint(std::string DebugString)
+void DDebugManager::DebugPrint(const std::string& DebugString)
 {
 	std::cout << DebugString << std::endl;
 	OutputDebugString((DebugString + "\n").c_str());
 }
 
 
-void DDebugManager::Error(DawnEngineObject* Sender, std::string Detail)
+void DDebugManager::Error(const DawnEngineObject* Sender, const std::string& Detail)
 {
 	this->ClassPrint(Sender, "Error: " + Detail);
 }
 
 
-void DDebugManager::Message(DawnEngineObject* Sender, std::string Detail)
+void DDebugManager::Message(const DawnEngineObject* Sender, const std::string& Detail)
 {
 	this->ClassPrint(Sender, "Message: " + Detail);
 }
 
-void DDebugManager::ClassPrint(DawnEngineObject* Sender, std::string Detail)
+void DDebugManager::ClassPrint(const DawnEngineObject* Sender, const std::string& Detail)
 {
 	this->DebugPrint("[" + Sender->ClassName() + "] " + Detail);
 }

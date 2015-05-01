@@ -16,7 +16,7 @@ DFrameworkReference::~DFrameworkReference()
 {
 }
 
-void DFrameworkReference::Clone(DFrameworkReference *DFReference)
+void DFrameworkReference::Clone(const DFrameworkReference *DFReference)
 {
 	DFrameworkObjectCopy(Engine);
 	DFrameworkObjectCopy(WindowManager);
