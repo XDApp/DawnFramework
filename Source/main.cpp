@@ -4,6 +4,6 @@
 
 int main()
 {
-	DApp::Run();
+	DApp::Run(new DAppConfig);
 	return 0;
 }

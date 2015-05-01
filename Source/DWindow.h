@@ -24,5 +24,6 @@ public:
 	void SetSize(int Width, int Height);
 	void SetPos(int X, int Y);
 	DGraphicsManager* GraphicsManager;
+	virtual void PullReference(const DawnEngineObject* Object);
 };
 

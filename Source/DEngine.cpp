@@ -5,7 +5,7 @@
 #include "DDebugManager.h"
 #include "DEngine.h"
 
-DEngine::DEngine()
+DEngine::DEngine(DAppConfig* AppConfig)
 	: WindowManager(new DWindowManager),
 	DebugManager(new DDebugManager),
 	ResourceManager(new DResourceManager)
@@ -14,10 +14,11 @@ DEngine::DEngine()
 	this->DF->DebugManager = this->DebugManager;
 	this->DF->WindowManager = this->WindowManager;
 	this->DF->ResourceManager = this->ResourceManager;
+	this->DF->Config = AppConfig;
 
-	WindowManager->DF->Clone(this->DF);
-	DebugManager->DF->Clone(this->DF);
-	ResourceManager->DF->Clone(this->DF);
+	this->DebugManager->PullReference(this);
+	this->WindowManager->PullReference(this);
+	this->ResourceManager->PullReference(this);
 }
 
 

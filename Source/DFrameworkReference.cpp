@@ -7,7 +7,8 @@ DFrameworkReference::DFrameworkReference()
 	Window(nullptr),
 	GraphicsManager(nullptr),
 	DebugManager(nullptr),
-	ResourceManager(nullptr)
+	ResourceManager(nullptr),
+	Config(nullptr)
 {
 }
 
@@ -25,4 +26,5 @@ void DFrameworkReference::Clone(const DFrameworkReference *DFReference)
 	DFrameworkObjectCopy(WindowManager);
 	DFrameworkObjectCopy(DebugManager);
 	DFrameworkObjectCopy(ResourceManager);
+	DFrameworkObjectCopy(Config);
 }

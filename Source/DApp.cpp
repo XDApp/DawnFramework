@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "DApp.h"
-
+#include "DAppConfig.h"
 #include "DFramework.h"
 
 
@@ -16,9 +16,9 @@ DApp::~DApp()
 }
 
 
-void DApp::Run()
+void DApp::Run(DAppConfig* Config)
 {
-	DApp::Engine = new DEngine();
+	DApp::Engine = new DEngine(Config);
 	DApp::Engine->Initialize();
 
 	DWindow *Window = DApp::Engine->WindowManager->NewWindow(800, 600, "Dawn Framework Sample Window");

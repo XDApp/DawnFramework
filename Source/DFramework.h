@@ -11,3 +11,4 @@
 #include "DResourceManager.h"
 
 #include "DApp.h"
+#include "DAppConfig.h"

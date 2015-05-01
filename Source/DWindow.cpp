@@ -8,7 +8,6 @@ DWindow::DWindow(GLFWwindow* Window)
 	, GraphicsManager(new DGraphicsManager)
 {
 	this->DF->GraphicsManager = this->GraphicsManager;
-	this->GraphicsManager->DF->Clone(this->DF);
 }
 
 
@@ -85,4 +84,11 @@ void DWindow::SetSize(int Width, int Height)
 void DWindow::SetPos(int X, int Y)
 {
 	glfwSetWindowPos(this->GetWindow(), X, Y);
+}
+
+
+void DWindow::PullReference(const DawnEngineObject* Object)
+{
+	DawnEngineObject::PullReference(Object);
+	this->GraphicsManager->PullReference(this);
 }

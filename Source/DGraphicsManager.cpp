@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "DGraphicsManager.h"
+#include "DDebugManager.h"
+#include "DAppConfig.h"
 
 
 DGraphicsManager::DGraphicsManager()

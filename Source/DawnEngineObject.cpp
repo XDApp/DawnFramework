@@ -11,3 +11,9 @@ DawnEngineObject::~DawnEngineObject()
 {
 	DDel(this->DF);
 }
+
+
+void DawnEngineObject::PullReference(const DawnEngineObject* Object)
+{
+	this->DF->Clone(Object->DF);
+}

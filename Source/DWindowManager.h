@@ -31,5 +31,7 @@ public:
 	void CloseWindow(DWindow* Window);
 private:
 	void ProcessCloseSignal();
+public:
+	virtual void PullReference(const DawnEngineObject* Object);
 };
 

@@ -10,4 +10,5 @@ public:
 	virtual const std::string ClassName() const = 0;
 
 	DFrameworkReference* DF;
+	virtual void PullReference(const DawnEngineObject* Object);
 };

@@ -7,5 +7,5 @@ public:
 	static DEngine *Engine;
 	DApp();
 	virtual ~DApp();
-	static void Run();
+	static void Run(DAppConfig* Config);
 };

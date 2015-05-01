@@ -7,7 +7,7 @@ class DEngine :
 	DClass(DEngine)
 
 public:
-	DEngine();
+	DEngine(DAppConfig* AppConfig);
 	~DEngine();
 	
 public:

@@ -18,7 +18,7 @@ DWindowManager::~DWindowManager()
 DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
 {
 	DWindow *Window = new DWindow(AllocWindowObject(Width, Height, Title));
-	Window->DF->Clone(this->DF);
+	Window->PullReference(this);
 	Window->DF->Window = Window;
 
 	this->Windows.push_back(Window);
@@ -106,5 +106,15 @@ void DWindowManager::ProcessCloseSignal()
 	{
 		this->DestroyWindow(this->CloseWindowQueue.back());
 		this->CloseWindowQueue.pop_back();
+	}
+}
+
+
+void DWindowManager::PullReference(const DawnEngineObject* Object)
+{
+	DawnEngineObject::PullReference(Object);
+	for (auto &Window : Windows)
+	{
+		Window->PullReference(this);
 	}
 }
