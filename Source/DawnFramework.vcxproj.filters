@@ -65,6 +65,12 @@
     <ClInclude Include="DTextFileResourceLoader.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="DGLVertexShader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DGLFragmentShader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -116,6 +122,12 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="DTextFileResourceLoader.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DGLVertexShader.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DGLFragmentShader.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

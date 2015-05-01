@@ -10,7 +10,7 @@ class DResource :
 public:
 	DResource(DResourceLoader* loader);
 	~DResource();
-	virtual DResource* Load() = 0;
+	virtual void Load() = 0;
 	virtual void Destroy() = 0;
 protected:
 	DResourceLoader* Loader;

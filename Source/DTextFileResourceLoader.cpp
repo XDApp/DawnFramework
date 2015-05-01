@@ -1,4 +1,6 @@
 #include "stdafx.h"
+#include "DApp.h"
+#include "DDebugManager.h"
 #include "DTextFileResourceLoader.h"
 
 
@@ -23,6 +25,10 @@ const std::string DTextFileResourceLoader::GetPath()
 void DTextFileResourceLoader::Open()
 {
 	this->fin.open(Path, std::ifstream::in);
+	if (!this->fin.is_open())
+	{
+		DApp::DF->DebugManager->Error(this, "Error Opening File: " + Path);
+	}
 }
 
 

@@ -14,5 +14,11 @@
 #include "DResourceLoader.h"
 #include "DTextFileResourceLoader.h"
 
+#include "DGLShader.h"
+#include "DGLVertexShader.h"
+#include "DGLFragmentShader.h"
+#include "DGLProgram.h"
+
+
 #include "DApp.h"
 #include "DAppConfig.h"

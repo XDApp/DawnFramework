@@ -1,5 +1,10 @@
 #pragma once
 #include "DawnEngineObject.h"
+
+class DGLVertexShader;
+class DGLFragmentShader;
+class DResourceLoader;
+
 class DGraphicsManager :
 	public DawnEngineObject
 {
@@ -10,4 +15,10 @@ public:
 	
 	void Update();
 	void Render();
+
+	DGLVertexShader *VShader;
+	DGLFragmentShader *FShader;
+	DResourceLoader *VLoader;
+	DResourceLoader *FLoader;
+	void Debug_RunShader();
 };

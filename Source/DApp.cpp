@@ -30,5 +30,6 @@ void DApp::Run(DAppConfig* Config)
 	DApp::Engine->InitializeContext();
 	Window->Show();
 
+	Window->GraphicsManager->Debug_RunShader();
 	DApp::Engine->Loop();
 }

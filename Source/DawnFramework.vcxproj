@@ -19,8 +19,10 @@
     <ClInclude Include="DEngine.h" />
     <ClInclude Include="DFramework.h" />
     <ClInclude Include="DFrameworkReference.h" />
+    <ClInclude Include="DGLFragmentShader.h" />
     <ClInclude Include="DGLProgram.h" />
     <ClInclude Include="DGLShader.h" />
+    <ClInclude Include="DGLVertexShader.h" />
     <ClInclude Include="DGraphicsManager.h" />
     <ClInclude Include="DResource.h" />
     <ClInclude Include="DResourceLoader.h" />
@@ -37,8 +39,10 @@
     <ClCompile Include="DDebugManager.cpp" />
     <ClCompile Include="DEngine.cpp" />
     <ClCompile Include="DFrameworkReference.cpp" />
+    <ClCompile Include="DGLFragmentShader.cpp" />
     <ClCompile Include="DGLProgram.cpp" />
     <ClCompile Include="DGLShader.cpp" />
+    <ClCompile Include="DGLVertexShader.cpp" />
     <ClCompile Include="DGraphicsManager.cpp" />
     <ClCompile Include="DResource.cpp" />
     <ClCompile Include="DResourceLoader.cpp" />
