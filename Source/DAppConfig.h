@@ -8,5 +8,6 @@ public:
 	~DAppConfig();
 	const std::string WorkPath();
 	const std::string ResourcePath();
+	const DColor BackgroundColor();
 };
 

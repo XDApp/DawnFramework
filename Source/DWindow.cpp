@@ -2,6 +2,8 @@
 #include "DWindow.h"
 #include "DGraphicsManager.h"
 #include "DWindowManager.h"
+#include "DDebugManager.h"
+#include "DAppConfig.h"
 
 DWindow::DWindow(GLFWwindow* Window)
 	:gWindow(Window)
@@ -33,15 +35,10 @@ void DWindow::Update()
 }
 
 
-void DWindow::Initialize()
-{
-}
-
-
 void DWindow::Render()
 {
-	glClearColor(255.0f, 255.0f, 0.0f, 255.0f);
 	DF->GraphicsManager->Render();
+	glfwSwapBuffers(this->gWindow);
 }
 
 
@@ -91,4 +88,11 @@ void DWindow::PullReference(const DawnEngineObject* Object)
 {
 	DawnEngineObject::PullReference(Object);
 	this->GraphicsManager->PullReference(this);
+}
+
+
+void DWindow::Initialize()
+{
+	DColor tmp = DF->Config->BackgroundColor();
+	glClearColor(DGCR(tmp),DGCG(tmp),DGCB(tmp),DGCA(tmp));
 }

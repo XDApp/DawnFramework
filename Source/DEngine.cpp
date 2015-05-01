@@ -54,6 +54,7 @@ void DEngine::InitializeGLFW()
 
 void DEngine::InitializeGLEW()
 {
+	glewExperimental = true;
 	if (glewInit() != GLEW_OK) 
 	{
 		DF->DebugManager->Error(this, "GLEW Failed to Initialize.");

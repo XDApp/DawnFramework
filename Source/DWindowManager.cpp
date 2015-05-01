@@ -21,6 +21,9 @@ DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
 	Window->PullReference(this);
 	Window->DF->Window = Window;
 
+	this->MakeCurrent(Window);
+	Window->Initialize();
+
 	this->Windows.push_back(Window);
 	return Window;
 }
@@ -64,8 +67,11 @@ void DWindowManager::Initialize()
 
 void DWindowManager::MakeCurrent(DWindow* Window)
 {
-	glfwMakeContextCurrent(Window->GetWindow());
-	CurrentWindow = Window;
+	if (CurrentWindow != Window)
+	{
+		glfwMakeContextCurrent(Window->GetWindow());
+		CurrentWindow = Window;
+	}
 }
 
 void DWindowManager::Render()
@@ -74,7 +80,6 @@ void DWindowManager::Render()
 	{
 		this->MakeCurrent(Window);
 		Window->Render();
-		glfwSwapBuffers(CurrentWindow->GetWindow());
 		glfwPollEvents();
 	}
 }

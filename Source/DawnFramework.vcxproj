@@ -44,9 +44,6 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="DWindowManager.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="DawnFramework.rc" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AF189DF2-C786-479B-BF32-79C446904AC6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

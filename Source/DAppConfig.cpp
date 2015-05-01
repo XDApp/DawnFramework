@@ -2,7 +2,6 @@
 #include "DAppConfig.h"
 
 
-
 DAppConfig::DAppConfig()
 {
 	char _Path[1024];
@@ -25,4 +24,10 @@ const std::string DAppConfig::WorkPath()
 const std::string DAppConfig::ResourcePath()
 {
 	return this->WorkPath() + "Resource\\";
+}
+
+
+const DColor DAppConfig::BackgroundColor()
+{
+	return DColorC(0, 0, 0, 0);
 }

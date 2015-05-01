@@ -18,7 +18,6 @@ void DDebugManager::DebugPrint(const std::string& DebugString)
 	OutputDebugString((DebugString + "\n").c_str());
 }
 
-
 void DDebugManager::Error(const DawnEngineObject* Sender, const std::string& Detail)
 {
 	this->ClassPrint(Sender, "Error: " + Detail);

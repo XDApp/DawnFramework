@@ -14,7 +14,6 @@ public:
 
 	GLFWwindow* GetWindow();
 	void Update();
-	void Initialize();
 	void Render();
 	void Close();
 	void Show();
@@ -25,5 +24,6 @@ public:
 	void SetPos(int X, int Y);
 	DGraphicsManager* GraphicsManager;
 	virtual void PullReference(const DawnEngineObject* Object);
+	void Initialize();
 };
 
