@@ -20,6 +20,7 @@ private:
 	DResourceLoader *FLoader;
 	DGLProgram *Program;
 
+	GLuint vertexPosition_modelspaceID;
 	GLuint VertexArrayID;
 	GLuint vertexbuffer;
 };
