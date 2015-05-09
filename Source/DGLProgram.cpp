@@ -27,7 +27,7 @@ void DGLProgram::DetachShader(DGLShader* Shader)
 }
 
 
-const std::vector<DGLShader*> DGLProgram::GetShaders()
+const std::vector<DGLShader*> DGLProgram::GetShaders() const
 {
 	return this->Shaders;
 }

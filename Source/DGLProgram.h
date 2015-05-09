@@ -16,7 +16,7 @@ protected:
 	std::vector<DGLShader*> Shaders;
 	GLuint ProgramID;
 public:
-	const std::vector<DGLShader*> GetShaders();
+	const std::vector<DGLShader*> GetShaders() const;
 	void Load();
 	void Destroy();
 public:

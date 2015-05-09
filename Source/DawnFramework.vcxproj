@@ -29,6 +29,7 @@
     <ClInclude Include="DResourceManager.h" />
     <ClInclude Include="DScene.h" />
     <ClInclude Include="DSceneManager.h" />
+    <ClInclude Include="DScene_Cube.h" />
     <ClInclude Include="DScene_Main.h" />
     <ClInclude Include="DScene_Main2.h" />
     <ClInclude Include="DTextFileResourceLoader.h" />
@@ -53,6 +54,7 @@
     <ClCompile Include="DResourceManager.cpp" />
     <ClCompile Include="DScene.cpp" />
     <ClCompile Include="DSceneManager.cpp" />
+    <ClCompile Include="DScene_Cube.cpp" />
     <ClCompile Include="DScene_Main.cpp" />
     <ClCompile Include="DScene_Main2.cpp" />
     <ClCompile Include="DTextFileResourceLoader.cpp" />

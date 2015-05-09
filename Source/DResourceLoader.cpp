@@ -11,7 +11,7 @@ DResourceLoader::~DResourceLoader()
 }
 
 
-std::istream& DResourceLoader::Stream()
+std::istream& DResourceLoader::Stream() const
 {
 	return *(this->inStream);
 }

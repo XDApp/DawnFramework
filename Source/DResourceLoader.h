@@ -11,6 +11,6 @@ protected:
 	std::istream *inStream;
 public:
 	virtual void Open() = 0;
-	virtual std::istream& Stream();
+	virtual std::istream& Stream() const;
 	virtual void Close() = 0;
 };

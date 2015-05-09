@@ -16,7 +16,7 @@ DWindowManager::~DWindowManager()
 }
 
 
-DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
+DWindow* DWindowManager::NewWindow(int Width, int Height, const std::string& Title)
 {
 	DWindow *Window = new DWindow(AllocWindowObject(Width, Height, Title));
 	Window->DF->Window = Window;
@@ -50,7 +50,7 @@ DWindow* DWindowManager::NewWindow(int Width, int Height, std::string Title)
 }
 
 
-GLFWwindow* DWindowManager::AllocWindowObject(int Width, int Height, std::string Title)
+GLFWwindow* DWindowManager::AllocWindowObject(int Width, int Height,  const std::string& Title)
 {
 	DWindow *__Window = this->__GetAllocedWindow();
 	GLFWwindow *___Window = __Window == nullptr ? nullptr : __Window->GetWindow();
@@ -121,7 +121,7 @@ void DWindowManager::Update()
 }
 
 
-bool DWindowManager::HasWindowAvailable()
+bool DWindowManager::HasWindowAvailable() const
 {
 	return !Windows.empty();
 }
@@ -151,19 +151,18 @@ void DWindowManager::PullReference(const DawnEngineObject* Object)
 	}
 }
 
-
-GLEWContext* glewGetContext()
-{
-	return DApp::Engine->WindowManager->GetCurrentWindow()->GetContext();
-}
-
-DWindow* DWindowManager::GetCurrentWindow()
+DWindow* DWindowManager::GetCurrentWindow() const
 {
 	return this->CurrentWindow;
 }
 
-DWindow* DWindowManager::__GetAllocedWindow()
+DWindow* DWindowManager::__GetAllocedWindow() const
 {
 	if (this->Windows.empty())return nullptr;
 	else return this->Windows[0];
+}
+
+GLEWContext* glewGetContext()
+{
+	return DApp::Engine->WindowManager->GetCurrentWindow()->GetContext();
 }

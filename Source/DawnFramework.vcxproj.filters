@@ -83,6 +83,9 @@
     <ClInclude Include="DScene_Main2.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="DScene_Cube.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -152,6 +155,9 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="DScene_Main2.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DScene_Cube.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

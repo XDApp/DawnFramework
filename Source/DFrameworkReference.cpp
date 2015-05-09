@@ -32,3 +32,19 @@ void DFrameworkReference::Clone(const DFrameworkReference *DFReference)
 	DFrameworkObjectCopy(SceneManager);
 	DFrameworkObjectCopy(Scene);
 }
+
+bool DFrameworkReference::CheckAvailable() const
+{
+	bool isAvailable = true;
+	DFrameworkObjectCheck(Engine);
+	DFrameworkObjectCheck(WindowManager);
+	DFrameworkObjectCheck(Window);
+	DFrameworkObjectCheck(GraphicsManager);
+	DFrameworkObjectCheck(WindowManager);
+	DFrameworkObjectCheck(DebugManager);
+	DFrameworkObjectCheck(ResourceManager);
+	DFrameworkObjectCheck(Config);
+	DFrameworkObjectCheck(SceneManager);
+	DFrameworkObjectCheck(Scene);
+	return isAvailable;
+}

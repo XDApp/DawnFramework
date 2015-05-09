@@ -21,7 +21,7 @@ DWindow::~DWindow()
 }
 
 
-GLFWwindow* DWindow::GetWindow()
+GLFWwindow* DWindow::GetWindow() const
 {
 	return this->gWindow;
 }
@@ -108,7 +108,7 @@ void DWindow::Initialize()
 }
 
 
-GLEWContext* DWindow::GetContext()
+GLEWContext* DWindow::GetContext() const
 {
 	return this->Context;
 }

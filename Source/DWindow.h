@@ -12,7 +12,7 @@ public:
 	~DWindow();
 	
 
-	GLFWwindow* GetWindow();
+	GLFWwindow* GetWindow() const;
 	void Update();
 	void Render();
 	void Close();
@@ -28,6 +28,6 @@ public:
 public:
 	GLEWContext* Context;
 
-	GLEWContext* GetContext();
+	GLEWContext* GetContext() const;
 };
 

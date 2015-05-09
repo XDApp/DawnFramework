@@ -16,7 +16,7 @@ DTextFileResourceLoader::~DTextFileResourceLoader()
 }
 
 
-const std::string DTextFileResourceLoader::GetPath()
+const std::string DTextFileResourceLoader::GetPath() const
 {
 	return this->Path;
 }

@@ -14,7 +14,7 @@ DResource::~DResource()
 }
 
 
-bool DResource::isLoad()
+bool DResource::isLoad() const
 {
 	return this->__isLoad;
 }

@@ -5,6 +5,7 @@
 class DScene_Main :
 	public DScene
 {
+	DClass(DScene_Main)
 public:
 	DScene_Main();
 	~DScene_Main();

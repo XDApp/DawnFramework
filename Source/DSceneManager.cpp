@@ -102,7 +102,7 @@ void DSceneManager::ProcessEnd(DScene* Scene)
 }
 
 
-DScene* DSceneManager::GetCurrentScene()
+DScene* DSceneManager::GetCurrentScene() const
 {
 	if (Scenes.empty())return nullptr;
 	else return this->Scenes.back();
@@ -146,7 +146,7 @@ void DSceneManager::_Clear()
 }
 
 
-bool DSceneManager::isEmpty()
+bool DSceneManager::isEmpty() const
 {
 	return this->Scenes.empty() && this->PushQueue.empty();
 }

@@ -15,7 +15,7 @@ public:
 	void Render();
 
 	DSceneManager *SceneManager;
-	void PullReference(const DawnEngineObject* Object);
+	virtual void PullReference(const DawnEngineObject* Object);
 	void ProcessEnd();
-	bool CanEnd();
+	bool CanEnd() const;
 };

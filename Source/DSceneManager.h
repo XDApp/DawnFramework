@@ -38,13 +38,13 @@ private:
 	void ProcessStart(DScene* Scene);
 	void ProcessEnd(DScene* Scene);
 public:
-	DScene* GetCurrentScene();
+	DScene* GetCurrentScene() const;
 	void ProcessPushScene();
 private:
 	bool ClearFlag;
 public:
 	void _Clear();
-	bool isEmpty();
+	bool isEmpty() const;
 	void PushSceneObject(DScene* Scene);
 };
 

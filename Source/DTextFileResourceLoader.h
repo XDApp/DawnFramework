@@ -9,7 +9,7 @@ protected:
 public:
 	DTextFileResourceLoader(const std::string filePath);
 	~DTextFileResourceLoader();
-	const std::string GetPath();
+	const std::string GetPath() const;
 protected:
 	std::ifstream fin;
 public:

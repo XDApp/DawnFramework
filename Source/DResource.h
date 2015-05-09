@@ -17,6 +17,6 @@ protected:
 private:
 	bool __isLoad;
 public:
-	bool isLoad();
+	bool isLoad() const;
 };
 

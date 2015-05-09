@@ -12,7 +12,9 @@ class DSceneManager;
 class DScene;
 
 #define DFrameworkObjectCopy(ClassName)\
-	this->ClassName = (this->ClassName == nullptr) ? (DFReference->ClassName) : (this->ClassName)
+	this->ClassName = (DFReference->ClassName != nullptr) ? (DFReference->ClassName) : (this->ClassName)
+#define DFrameworkObjectCheck(ClassName)\
+	isAvailable = (isAvailable&&((this->ClassName)!=nullptr))
 
 class DFrameworkReference
 {
@@ -28,11 +30,10 @@ public:
 	DGraphicsManager* GraphicsManager;
 	DResourceManager* ResourceManager;
 	DSceneManager* SceneManager;
-
 	DScene* Scene;
-
 	DAppConfig* Config;
 
 	void Clone(const DFrameworkReference* DFReference);
+	bool CheckAvailable() const;
 };
 

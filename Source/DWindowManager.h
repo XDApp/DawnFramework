@@ -13,9 +13,9 @@ private:
 	std::vector<DWindow*> Windows;
 	std::vector<DWindow*> CloseWindowQueue;
 public:
-	DWindow* NewWindow(int Width, int Height, std::string Title);
+	DWindow* NewWindow(int Width, int Height, const std::string& Title);
 private:
-	GLFWwindow* AllocWindowObject(int Width, int Height, std::string Title);
+	GLFWwindow* AllocWindowObject(int Width, int Height, const std::string& Title);
 	void DestroyWindowObject(GLFWwindow* Window);
 public:
 	void Initialize();
@@ -25,7 +25,7 @@ public:
 private:
 	DWindow* CurrentWindow;
 public:
-	bool HasWindowAvailable();
+	bool HasWindowAvailable() const;
 	void DestroyWindow(DWindow* Window);
 	
 	void CloseWindow(DWindow* Window);
@@ -33,8 +33,8 @@ private:
 	void ProcessCloseSignal();
 public:
 	virtual void PullReference(const DawnEngineObject* Object);
-	DWindow* GetCurrentWindow();
+	DWindow* GetCurrentWindow() const;
 private:
-	DWindow* __GetAllocedWindow();
+	DWindow* __GetAllocedWindow() const;
 };
 

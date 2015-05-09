@@ -47,7 +47,7 @@ void DGraphicsManager::ProcessEnd()
 }
 
 
-bool DGraphicsManager::CanEnd()
+bool DGraphicsManager::CanEnd() const
 {
 	return !this->SceneManager->isEmpty();
 }

@@ -2,17 +2,16 @@
 #include "DScene.h"
 #include "DFramework.h"
 
-class DScene_Main2 :
+class DScene_Cube :
 	public DScene
 {
-	DClass(DScene_Main2)
+	DClass(DScene_Cube)
 public:
-	DScene_Main2();
-	~DScene_Main2();
-	void Update();
-	void Render();
+	DScene_Cube();
+	~DScene_Cube();
 	void Start();
 	void End();
+	void Update();
 
 private:
 	DGLVertexShader *VShader;
@@ -24,5 +23,7 @@ private:
 	GLuint vertexPosition_modelspaceID;
 	GLuint VertexArrayID;
 	GLuint vertexbuffer;
+public:
+	void Render();
 };
 
