@@ -2,6 +2,7 @@
 #include "DawnEngineObject.h"
 
 class DSceneManager;
+class DCanvasManager;
 
 class DGraphicsManager :
 	public DawnEngineObject
@@ -15,6 +16,7 @@ public:
 	void Render();
 
 	DSceneManager *SceneManager;
+	DCanvasManager *CanvasManager;
 	virtual void PullReference(const DawnEngineObject* Object);
 	void ProcessEnd();
 	bool CanEnd() const;

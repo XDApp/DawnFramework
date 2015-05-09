@@ -14,6 +14,7 @@
     <ClInclude Include="DApp.h" />
     <ClInclude Include="DAppConfig.h" />
     <ClInclude Include="DawnEngineObject.h" />
+    <ClInclude Include="DCanvasManager.h" />
     <ClInclude Include="DCore.h" />
     <ClInclude Include="DDebugManager.h" />
     <ClInclude Include="DEngine.h" />
@@ -32,7 +33,10 @@
     <ClInclude Include="DScene_Cube.h" />
     <ClInclude Include="DScene_Main.h" />
     <ClInclude Include="DScene_Main2.h" />
+    <ClInclude Include="DStream.h" />
     <ClInclude Include="DTextFileResourceLoader.h" />
+    <ClInclude Include="DTextStreamResourceLoader.h" />
+    <ClInclude Include="DTexture.h" />
     <ClInclude Include="DWindow.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="DWindowManager.h" />
@@ -41,6 +45,7 @@
     <ClCompile Include="DApp.cpp" />
     <ClCompile Include="DAppConfig.cpp" />
     <ClCompile Include="DawnEngineObject.cpp" />
+    <ClCompile Include="DCanvasManager.cpp" />
     <ClCompile Include="DDebugManager.cpp" />
     <ClCompile Include="DEngine.cpp" />
     <ClCompile Include="DFrameworkReference.cpp" />
@@ -57,7 +62,10 @@
     <ClCompile Include="DScene_Cube.cpp" />
     <ClCompile Include="DScene_Main.cpp" />
     <ClCompile Include="DScene_Main2.cpp" />
+    <ClCompile Include="DStream.cpp" />
     <ClCompile Include="DTextFileResourceLoader.cpp" />
+    <ClCompile Include="DTextStreamResourceLoader.cpp" />
+    <ClCompile Include="DTexture.cpp" />
     <ClCompile Include="DWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp" />

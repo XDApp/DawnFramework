@@ -3,6 +3,7 @@
 #include "DGLShader.h"
 #include "DApp.h"
 #include "DDebugManager.h"
+#include "DStream.h"
 
 DGLShader::DGLShader(DResourceLoader* loader)
 	:DResource(loader),
@@ -22,11 +23,12 @@ void DGLShader::Load()
 	DResource::Load();
 	std::string ShaderString="";
 	std::string Buffer;
-	std::istream &in = Loader->Stream();
-	while (std::getline(in, Buffer))
+	DStream* Stream = new DStream(this->Loader);
+	while (Stream->Good())
 	{
-		ShaderString += Buffer + "\n";
+		ShaderString += Stream->Get();
 	}
+	delete Stream;
 
 	GLint Result = GL_FALSE;
 	int InfoLogLength;

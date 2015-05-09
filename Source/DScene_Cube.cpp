@@ -14,9 +14,22 @@ DScene_Cube::~DScene_Cube()
 
 void DScene_Cube::Start()
 {
+	static const std::string vertShader = \
+		"#version 330 core\n"\
+		"in vec3 vertexPosition_modelspace;\n"\
+		"void main(){\n"\
+		"gl_Position.xyz = vertexPosition_modelspace;\n"\
+		"gl_Position.w = 1.0;\n"\
+		"}";
+	static const std::string fragShader = \
+		"#version 330 core\n"\
+		"out vec3 color;\n"\
+		"void main(){\n"\
+		"color = vec3(1, 0, 0);\n"\
+		"}";
 
-	VLoader = new DTextFileResourceLoader(DF->Config->ResourcePath() + "V2.vert.glsl");
-	FLoader = new DTextFileResourceLoader(DF->Config->ResourcePath() + "F2.frag.glsl");
+	VLoader = new DTextStreamResourceLoader(vertShader);
+	FLoader = new DTextStreamResourceLoader(fragShader);
 
 	VShader = new DGLVertexShader(VLoader);
 	FShader = new DGLFragmentShader(FLoader);

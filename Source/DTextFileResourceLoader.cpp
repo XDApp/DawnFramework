@@ -36,3 +36,8 @@ void DTextFileResourceLoader::Close()
 {
 	this->fin.close();
 }
+
+
+void DTextFileResourceLoader::Buffer()
+{
+}

@@ -6,6 +6,7 @@
 #include "DEngine.h"
 #include "DDebugManager.h"
 #include "DGraphicsManager.h"
+#include "DCanvasManager.h"
 #include "DWindow.h"
 #include "DWindowManager.h"
 #include "DResourceManager.h"
@@ -15,6 +16,7 @@
 #include "DResource.h"
 #include "DResourceLoader.h"
 #include "DTextFileResourceLoader.h"
+#include "DTextStreamResourceLoader.h"
 
 #include "DGLShader.h"
 #include "DGLVertexShader.h"

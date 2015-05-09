@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <functional>
 #include <queue>
+#include <sstream>
 
 #define GLEW_MX
 #define GLEW_STATIC

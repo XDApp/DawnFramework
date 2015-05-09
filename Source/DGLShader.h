@@ -17,4 +17,3 @@ protected:
 public:
 	GLuint GetShader();
 };
-

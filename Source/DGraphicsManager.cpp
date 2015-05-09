@@ -3,14 +3,11 @@
 #include "DDebugManager.h"
 #include "DAppConfig.h"
 #include "DSceneManager.h"
-
-#include "DGLVertexShader.h"
-#include "DResourceLoader.h"
-#include "DGLFragmentShader.h"
-#include "DGLProgram.h"
+#include "DCanvasManager.h"
 
 DGraphicsManager::DGraphicsManager()
-	:SceneManager(new DSceneManager())
+	:SceneManager(new DSceneManager()),
+	CanvasManager(new DCanvasManager())
 {
 	this->DF->SceneManager = this->SceneManager;
 }
@@ -38,6 +35,7 @@ void DGraphicsManager::PullReference(const DawnEngineObject* Object)
 {
 	DawnEngineObject::PullReference(Object);
 	this->SceneManager->PullReference(this);
+	this->CanvasManager->PullReference(this);
 }
 
 
