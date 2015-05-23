@@ -25,10 +25,10 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+
 #pragma comment (lib, "opengl32.lib")
 #pragma comment (lib, "glfw3.lib")
 #pragma comment (lib, "glew32mxs.lib")
-
 
 
 #include "DCore.h"
