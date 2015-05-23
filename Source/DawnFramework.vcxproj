@@ -130,8 +130,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
-    <OutDir>$(SolutionDir)\..\Bin\</OutDir>
-    <IntDir>$(SolutionDir)\..\Bin\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\..\Bin_x86\</OutDir>
+    <IntDir>$(SolutionDir)\..\Bin_x86\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
     <IncludePath>$(SolutionDir)\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\..\Library;$(LibraryPath)</LibraryPath>
@@ -142,8 +142,8 @@
     <LibraryPath>$(SolutionDir)\..\Library;$(LibraryPath)</LibraryPath>
     <LinkIncremental>true</LinkIncremental>
     <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
-    <OutDir>$(SolutionDir)\..\Bin\</OutDir>
-    <IntDir>$(SolutionDir)\..\Bin\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\..\Bin_x64\</OutDir>
+    <IntDir>$(SolutionDir)\..\Bin_x64\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
