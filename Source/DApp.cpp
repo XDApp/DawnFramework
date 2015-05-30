@@ -31,7 +31,7 @@ void DApp::Run(DAppConfig* Config)
 
 	DApp::Engine->Initialize();
 
-	DWindow *Window = DApp::Engine->WindowManager->NewWindow(800, 600, "Dawn Framework Sample Window");
+	DWindow *Window = DApp::Engine->WindowManager->NewWindow(800, 600, "Dawn");
 //	DWindow *Window2 = DApp::Engine->WindowManager->NewWindow(800, 600, "Dawn Framework Second Window");
 //	DWindow *Window3 = DApp::Engine->WindowManager->NewWindow(800, 600, "Dawn Framework Third Window");
 //	DWindow *Window4 = DApp::Engine->WindowManager->NewWindow(800, 600, "Dawn Framework Fourth Window");
