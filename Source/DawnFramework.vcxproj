@@ -22,6 +22,7 @@
     <ClInclude Include="DApp.h" />
     <ClInclude Include="DAppConfig.h" />
     <ClInclude Include="DawnEngineObject.h" />
+    <ClInclude Include="DBinaryFileResourceLoader.h" />
     <ClInclude Include="DCanvasManager.h" />
     <ClInclude Include="DCore.h" />
     <ClInclude Include="DDebugManager.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="DGLShader.h" />
     <ClInclude Include="DGLVertexShader.h" />
     <ClInclude Include="DGraphicsManager.h" />
+    <ClInclude Include="DPNGStream.h" />
     <ClInclude Include="DResource.h" />
     <ClInclude Include="DResourceLoader.h" />
     <ClInclude Include="DResourceManager.h" />
@@ -41,6 +43,7 @@
     <ClInclude Include="DScene_Cube.h" />
     <ClInclude Include="DScene_Main.h" />
     <ClInclude Include="DScene_Main2.h" />
+    <ClInclude Include="DScene_PNG.h" />
     <ClInclude Include="DStream.h" />
     <ClInclude Include="DTextFileResourceLoader.h" />
     <ClInclude Include="DTextStreamResourceLoader.h" />
@@ -53,6 +56,7 @@
     <ClCompile Include="DApp.cpp" />
     <ClCompile Include="DAppConfig.cpp" />
     <ClCompile Include="DawnEngineObject.cpp" />
+    <ClCompile Include="DBinaryFileResourceLoader.cpp" />
     <ClCompile Include="DCanvasManager.cpp" />
     <ClCompile Include="DDebugManager.cpp" />
     <ClCompile Include="DEngine.cpp" />
@@ -62,6 +66,7 @@
     <ClCompile Include="DGLShader.cpp" />
     <ClCompile Include="DGLVertexShader.cpp" />
     <ClCompile Include="DGraphicsManager.cpp" />
+    <ClCompile Include="DPNGStream.cpp" />
     <ClCompile Include="DResource.cpp" />
     <ClCompile Include="DResourceLoader.cpp" />
     <ClCompile Include="DResourceManager.cpp" />
@@ -70,6 +75,7 @@
     <ClCompile Include="DScene_Cube.cpp" />
     <ClCompile Include="DScene_Main.cpp" />
     <ClCompile Include="DScene_Main2.cpp" />
+    <ClCompile Include="DScene_PNG.cpp" />
     <ClCompile Include="DStream.cpp" />
     <ClCompile Include="DTextFileResourceLoader.cpp" />
     <ClCompile Include="DTextStreamResourceLoader.cpp" />

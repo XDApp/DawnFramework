@@ -98,6 +98,15 @@
     <ClInclude Include="DStream.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="DScene_PNG.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DBinaryFileResourceLoader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DPNGStream.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -182,6 +191,15 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="DStream.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DScene_PNG.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DBinaryFileResourceLoader.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DPNGStream.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

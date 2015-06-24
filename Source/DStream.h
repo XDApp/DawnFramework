@@ -15,5 +15,6 @@ public:
 	~DStream();
 	bool Good() const;
 	char Get();
+	std::streamsize Read(char* Target, std::streamsize Length);
 };
 

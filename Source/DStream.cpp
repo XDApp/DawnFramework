@@ -25,3 +25,10 @@ char DStream::Get()
 {
 	return inStream.get();
 }
+
+std::streamsize DStream::Read(char* Target, std::streamsize Length)
+{
+	this->inStream.read(Target, Length);
+	if (this->inStream.good())return Length;
+	else return this->inStream.gcount();
+}

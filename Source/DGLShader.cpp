@@ -22,7 +22,6 @@ void DGLShader::Load()
 {
 	DResource::Load();
 	std::string ShaderString="";
-	std::string Buffer;
 	DStream* Stream = new DStream(this->Loader);
 	while (Stream->Good())
 	{

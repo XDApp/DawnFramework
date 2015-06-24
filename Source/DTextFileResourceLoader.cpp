@@ -24,7 +24,7 @@ const std::string DTextFileResourceLoader::GetPath() const
 
 void DTextFileResourceLoader::Open()
 {
-	this->fin.open(Path, std::ifstream::in);
+	this->fin.open(Path, std::ios::in);
 	if (!this->fin.is_open())
 	{
 		DApp::DF->DebugManager->Error(this, "Error Opening File: " + Path);
